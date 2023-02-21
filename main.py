@@ -34,7 +34,7 @@ for i, row in birthdays.iterrows():
         with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
             connection.login(user=email, password=password)
-            connection.sendmail(from_addr=email, to_addrs="aleisurex@gmail.com", msg=f"Subject:Happy Birthday!\n\n{content}")
+            connection.sendmail(from_addr=email, to_addrs=row["email"], msg=f"Subject:Happy Birthday!\n\n{content}")
 
 
 
